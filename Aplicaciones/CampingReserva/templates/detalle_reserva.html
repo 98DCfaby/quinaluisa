@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block title %}Detalle de Reserva{% endblock %}
+{% block content %}
+<h1>Detalles de la Reserva</h1>
+<p><strong>Campista:</strong> {{ reserva.campista.nombre_completo }}</p>
+<p><strong>Fecha Inicio:</strong> {{ reserva.fecha_inicio }}</p>
+<p><strong>Fecha Fin:</strong> {{ reserva.fecha_fin }}</p>
+<p><strong>Tipo de Alojamiento:</strong> {{ reserva.tipo_alojamiento }}</p>
+<p><strong>Número de Personas:</strong> {{ reserva.numero_personas }}</p>
+<p><strong>Estado:</strong> {{ reserva.estado_reserva }}</p>
+<p><strong>Observaciones:</strong> {{ reserva.observaciones }}</p>
+<a href="{% url 'lista_reservas' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}

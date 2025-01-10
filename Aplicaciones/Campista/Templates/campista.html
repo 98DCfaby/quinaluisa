@@ -1,0 +1,23 @@
+{% extends "./plantilla.html"%}
+{% block contenido %}
+<div class="container mt-4">
+    <form method="POST" action="{% url 'guardar_campista' %}">
+        {% csrf_token %}
+        <label for="txt_nombre">Nombre:</label>
+        <input type="text" name="txt_nombre" required>
+    
+        <label for="txt_correo">Correo:</label>
+        <input type="email" name="txt_correo" required>
+    
+        <label for="txt_telefono">Teléfono:</label>
+        <input type="text" name="txt_telefono" required>
+    
+        <label for="txt_direccion">Dirección:</label>
+        <input type="text" name="txt_direccion">
+    
+        <button type="submit">Guardar Campista</button>
+    </form>
+    
+</div>
+
+{% endblock %}

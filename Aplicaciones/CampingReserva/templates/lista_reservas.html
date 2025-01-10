@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Reservas{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <!-- Título principal -->
+    <h1 class="text-center mb-4">Lista de Reservas</h1>
+
+    <!-- Tabla de reservas -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Campista</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reservas %}
+                    <tr>
+                        <td>{{ reserva.campista.nombre_completo }}</td>
+                        <td>{{ reserva.fecha_inicio }}</td>
+                        <td>{{ reserva.fecha_fin }}</td>
+                        <td>{{ reserva.estado_reserva }}</td>
+                        <td class="text-center">
+                            <a href="{% url 'detalle_reserva' reserva.id %}" class="btn btn-info btn-sm shadow-sm">
+                                Ver
+                            </a>
+                            <a href="{% url 'editar_reserva' reserva.id %}" class="btn btn-warning btn-sm shadow-sm">
+                                Editar
+                            </a>
+                            <a href="{% url 'eliminar_reserva' reserva.id %}" class="btn btn-danger btn-sm shadow-sm" 
+                               onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No hay reservas registradas.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para crear una nueva reserva -->
+    <div class="text-center mt-4">
+        <a href="{% url 'crear_reserva' %}" class="btn btn-primary btn-lg shadow">
+            Crear Nueva Reserva
+        </a>
+    </div>
+</div>
+{% endblock %}

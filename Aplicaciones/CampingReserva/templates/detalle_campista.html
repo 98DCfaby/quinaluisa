@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% block title %}Detalle de Campista{% endblock %}
+{% block content %}
+<h1>Detalles de {{ campista.nombre_completo }}</h1>
+<p><strong>Correo:</strong> {{ campista.correo_electronico }}</p>
+<p><strong>Teléfono:</strong> {{ campista.telefono }}</p>
+<p><strong>Dirección:</strong> {{ campista.direccion }}</p>
+<a href="{% url 'lista_campistas' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}
