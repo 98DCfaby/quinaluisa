@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Reserva</title>
+</head>
+<body>
+    <h1>Detalles de la Reserva</h1>
+    
+    <p><strong>Campista:</strong> {{ reserva.campista.nombre }}</p>
+    <p><strong>Fecha de Inicio:</strong> {{ reserva.fecha_inicio }}</p>
+    <p><strong>Fecha de Fin:</strong> {{ reserva.fecha_fin }}</p>
+    <p><strong>Alojamiento:</strong> {{ reserva.tipo_alojamiento }}</p>
+    <p><strong>Número de Personas:</strong> {{ reserva.numero_personas }}</p>
+    <p><strong>Estado:</strong> {{ reserva.estado }}</p>
+    <p><strong>Observaciones:</strong> {{ reserva.observaciones }}</p>
+    
+    <a href="{% url 'reserva_edit' reserva.id %}">Editar</a> |
+    <a href="{% url 'reserva_delete' reserva.id %}">Eliminar</a> |
+    <a href="{% url 'reserva_list' %}">Volver a la lista de reservas</a>
+</body>
+</html>
