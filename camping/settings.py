@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CampingSystem.urls'
+ROOT_URLCONF = 'camping.urls'
 
 TEMPLATES = [
     {
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CampingSystem.wsgi.application'
+WSGI_APPLICATION = 'camping.wsgi.application'
 
 
 # Database
